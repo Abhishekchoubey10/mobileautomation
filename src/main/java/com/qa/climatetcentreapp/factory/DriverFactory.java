@@ -1,10 +1,14 @@
 package com.qa.climatetcentreapp.factory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.aspectj.util.FileUtil;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -20,7 +24,7 @@ import java.net.URL;
 public class DriverFactory {
 
 	public Properties prop;
-	public AndroidDriver driver;
+	public static AndroidDriver driver;
 	
 
 	public AndroidDriver insit_driver(Properties prop) {
@@ -65,5 +69,19 @@ public Properties insit_prop() {
 	}
 
 	return prop;
+}
+
+public static String getScreenshot() {
+File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+String path = System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis() + ".png";
+
+File Destination = new File(path);
+try {
+		FileUtil.copyFile(srcFile, Destination);//
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return path;
 }
 }

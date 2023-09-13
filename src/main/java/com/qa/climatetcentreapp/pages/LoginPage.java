@@ -57,6 +57,7 @@ public class LoginPage {
 		return false;
 	}
 	
+	//7. Login with credentails.... 
 	@Step("login to application with correct username {0} and password {1}")
 	public ProductListPage doLogin(String un, String pwd) {
 		if(isLoginLinkExist()){

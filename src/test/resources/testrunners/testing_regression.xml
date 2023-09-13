@@ -14,8 +14,7 @@
 	</listeners>
 
 
-	<test name="Climate Trade centre Login Page Test _ chrome">
-		<parameter name="browser" value="chrome" />
+	<test name="Climate Trade centre Login Page Test">
 
 		<classes>
 			<class name="com.qa.climatetcentreapp.tests.BasicTest" />
