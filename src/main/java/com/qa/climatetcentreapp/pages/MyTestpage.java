@@ -1,10 +1,9 @@
 package com.qa.climatetcentreapp.pages;
 
-public class TestPage {
+public class MyTestpage {
 
 	public static void main(String[] args) {
-		
-		System.out.println("Test");
+		System.out.println("Testing again");
 
 	}
 
