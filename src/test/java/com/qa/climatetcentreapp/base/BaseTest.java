@@ -7,9 +7,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.climatetcentreapp.factory.DriverFactory;
+import com.qa.climatetcentreapp.pages.HomePage;
 import com.qa.climatetcentreapp.pages.LoginPage;
-import com.qa.climatetcentreapp.pages.ProductListPage;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
@@ -21,7 +20,7 @@ public class BaseTest {
 	public DriverFactory df;
 	public Properties prop;
 	public LoginPage loginPage;
-	public ProductListPage prolistpage;
+	public HomePage homepage;
 
 	public SoftAssert softAssert;
 

@@ -35,6 +35,7 @@ public class ElementUtil {
 		this.driver = driver;
 		jsUtil = new JavaScriptUtil(driver);
 	}
+	
 
 	public By getBy(String locatorType, String locatorValue) {
 		By locator = null;

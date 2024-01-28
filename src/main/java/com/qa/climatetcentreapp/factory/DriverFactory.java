@@ -9,32 +9,34 @@ import java.util.Properties;
 import org.aspectj.util.FileUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.AppiumDriver;
+import com.qa.climatetcentreapp.utils.Constants;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
-import io.appium.java_client.remote.MobileCapabilityType;
-
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class DriverFactory {
 
+	private static final Duration[] P = null;
 	public Properties prop;
 	public static AndroidDriver driver;
 	
 
+	@SuppressWarnings("null")
 	public AndroidDriver insit_driver(Properties prop) {
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setPlatformName("Android");
 		options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
 		options.setDeviceName("Android Emulator");
 		options.setApp(prop.getProperty("APP"));
-		// options.setAppActivity("com.example.new_climat.MainActivity");
-		// options.setAppPackage("com.example.new_climat");
+		options.setAppWaitForLaunch(false);
+		options.setAutoWebviewTimeout(Constants.DURATION_TIME_OUT);
+		options.setAppActivity("com.cybrain.climateApp.MainActivity");
+		options.setAppPackage("com.cybrain.climateApp");
 
 		try {
 			URL url = new URL(prop.getProperty("url"));

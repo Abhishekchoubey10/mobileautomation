@@ -17,7 +17,7 @@
 	<test name="Climate Trade centre Login Page Test">
 
 		<classes>
-			<class name="com.qa.climatetcentreapp.tests.BasicTest" />
+			<class name="com.qa.climatetcentreapp.tests.LoginPageTest" />
 		</classes>
 		</test>  
 		
